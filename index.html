@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M.S. Madhusudan — Suchetana Electricals</title>
+<meta name="description" content="M.S. Madhusudan, Proprietor, Suchetana Electricals — Class I electrical engineers and contractors, Bengaluru. Since 1969.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="M.S. Madhusudan — Suchetana Electricals">
+<meta property="og:description" content="Proprietor · Class I Electrical Engineers &amp; Contractors · Bengaluru · Since 1969">
+<!-- DEPLOY: WhatsApp and LinkedIn are unreliable at resolving relative og:image
+     paths. Once the final URL is known, make this absolute, e.g.
+     https://card.suchetanaelectricals.in/assets/og.jpg -->
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#FFFFFF;
+  --backdrop:#EFEAF3;
+  --purple:#580C90;        /* brand, from the SE artwork — 9.5:1 on white */
+  --purple-deep:#3F0669;
+  --purple-lift:#7A28B8;
+  --tint-1:#F1EAF6;
+  --tint-2:#DFCCEC;
+  --ink:#1A1420;                  /* 16.6:1 on white */
+  --ink-soft:rgba(26,20,32,.62);  /* 7.3:1 on white */
+  --hair:rgba(26,20,32,.13);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--backdrop);color:var(--ink);
+  font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;
+  min-height:100dvh;padding:clamp(0px,3vw,28px);
+}
+
+/* Surfaces the browser would otherwise style for us. */
+::selection{background:var(--purple);color:#fff}
+:root{caret-color:var(--purple);scrollbar-color:var(--purple-lift) var(--backdrop)}
+:focus-visible{outline:2px solid var(--purple);outline-offset:3px;border-radius:4px}
+
+/* One screen, no scroll. */
+.card{
+  position:relative;overflow:hidden;
+  width:min(100%,430px);
+  height:min(100dvh,880px);
+  background:var(--paper);
+  display:flex;flex-direction:column;
+  padding:calc(16px + env(safe-area-inset-top,0px)) 22px calc(16px + env(safe-area-inset-bottom,0px));
+}
+@media (min-width:481px){
+  /* Subtract the body padding, or a short desktop window clips the card. */
+  .card{
+    height:min(calc(100dvh - 56px),880px);
+    border-radius:20px;box-shadow:0 24px 60px -28px rgba(26,20,32,.34);
+  }
+}
+/* On a phone the card IS the screen — any body padding would force a scroll. */
+@media (max-width:480px){
+  body{padding:0;overflow:hidden}
+  .card{height:100dvh;max-height:100dvh;width:100%}
+}
+
+/* ---------- masthead ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex:none;z-index:3}
+.top .mark{height:42px;width:auto;color:var(--purple);display:block}
+.top .stamp{
+  margin:0;text-align:right;
+  font-size:11px;font-weight:500;line-height:1.5;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+.top .stamp b{display:block;font-weight:600;color:var(--purple)}
+
+/* ---------- hero: collage + cut-out ---------- */
+.hero{position:relative;flex:1 1 auto;min-height:0;margin:6px -22px 0}
+.collage{position:absolute;inset:0;width:100%;height:100%}
+/* Shape fills come from the tokens, so the world recolours in one place. */
+.collage .f-purple{fill:var(--purple)}
+.collage .f-lift{fill:var(--purple-lift)}
+.collage .f-t1{fill:var(--tint-1)}
+.collage .f-t2{fill:var(--tint-2)}
+.subject{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  height:100%;width:auto;max-width:none;object-fit:contain;object-position:bottom;
+  filter:drop-shadow(0 14px 22px rgba(26,20,32,.22));
+}
+
+/* ---------- identity ---------- */
+.id{flex:none;z-index:3;text-align:center;margin-top:2px}
+.name{
+  margin:0;font-weight:800;font-size:clamp(26px,7.9vw,34px);
+  line-height:1.04;letter-spacing:-.028em;text-wrap:balance;
+}
+.pill{
+  display:inline-block;margin:9px 0 0;padding:5px 16px;border-radius:999px;
+  background:var(--purple);color:#fff;
+  font-size:11px;font-weight:600;letter-spacing:.055em;text-transform:uppercase;
+}
+.tagline{
+  margin:10px 0 0;font-size:14px;font-weight:500;line-height:1.35;color:var(--ink-soft);
+}
+
+/* ---------- contact ---------- */
+.contact{flex:none;z-index:3;margin-top:13px;border-top:1px solid var(--hair)}
+.crow{
+  display:flex;align-items:center;gap:11px;
+  padding:9px 2px;border-bottom:1px solid var(--hair);
+  color:var(--ink);text-decoration:none;
+  font-size:14px;font-weight:500;letter-spacing:.005em;
+  transition:color .18s ease;
+}
+/* Mono earns its place on the dialled number only — it is a figure, not a mood. */
+.crow .num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.01em;
+}
+.crow:hover{color:var(--purple)}
+.crow svg{width:15px;height:15px;flex:none;stroke:var(--purple);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.crow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.save{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  margin-top:12px;min-height:46px;border-radius:10px;
+  background:var(--purple);color:#fff;
+  font-size:14px;font-weight:600;
+  text-decoration:none;transition:background-color .18s ease;
+}
+.save svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.save:hover{background:var(--purple-deep)}
+
+.foot{
+  flex:none;margin-top:10px;text-align:center;
+  font-size:14px;font-weight:500;letter-spacing:.01em;color:var(--ink-soft);
+}
+
+/* ---------- motion ----------
+   One authored moment: the collage blooms and he rises into it. Everything
+   below settles on a single shared beat rather than each section repeating the
+   same entrance. The masthead is never hidden — it starts visible. */
+@keyframes bloom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+@keyframes stand{from{opacity:0;transform:translateX(-50%) translateY(16px)}to{opacity:1;transform:translateX(-50%)}}
+@keyframes settle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.collage{animation:bloom .9s cubic-bezier(.16,1,.3,1) both;transform-origin:50% 62%}
+/* `stand` must carry translateX(-50%) through: a keyframe ending at
+   transform:none would wipe the centring and throw him off the right edge. */
+.subject{animation:stand .85s cubic-bezier(.16,1,.3,1) .06s both}
+.id,.contact,.foot{animation:settle .55s cubic-bezier(.16,1,.3,1) .34s both}
+
+@media (prefers-reduced-motion:reduce){
+  .collage,.subject,.id,.contact,.foot{animation:none;opacity:1;transform:none}
+  .subject{transform:translateX(-50%)}
+}
+
+/* ---------- print / PDF export ----------
+   The PDF is rendered at the card's own size, so the card fills the page and
+   nothing animates in mid-capture. */
+@page{margin:0}
+@media print{
+  body{padding:0;background:#fff;display:block;min-height:0}
+  /* Height is measured from this layout, so the card sets its own proportions.
+     The hero needs an explicit height: with the card auto-height the flex
+     child would collapse to zero and the portrait would vanish. */
+  .card{width:100%;height:auto;max-height:none;border-radius:0;box-shadow:none}
+  .hero{height:360px;flex:none}
+  .collage,.subject,.id,.contact,.foot{animation:none;opacity:1;transform:none}
+  .subject{transform:translateX(-50%)}
+  /* "Save to contacts" points at a relative .vcf — meaningless once the PDF is
+     sent on its own, so it is dropped from the export. */
+  .save{display:none}
+}
+</style>
+</head>
+<body>
+<main class="card">
+
+  <header class="top">
+    <svg class="mark" viewBox="0 0 974 536" fill="currentColor" fill-rule="evenodd"
+         role="img" aria-label="Suchetana Electricals">
+      <path d="M444,2 L441,535 L685,535 L683,2 Z M69,24 L45,40 L24,61 L15,74 L5,96 L0,122 L0,146 L4,166 L15,193 L25,209 L44,232 L251,464 L257,480 L257,489 L254,499 L244,515 L221,533 L258,535 L293,532 L330,522 L351,512 L375,496 L396,475 L408,457 L419,431 L423,410 L422,376 L416,353 L407,332 L378,292 L174,68 L166,49 L167,35 L175,19 L189,5 L146,4 L118,7 L91,14 Z M703,1 L973,231 L972,0 Z M973,318 L889,390 L709,535 L973,535 Z M214,3 L352,161 L416,231 L415,3 Z M1,314 L1,535 L202,533 Z M863,159 L698,288 L732,314 L863,405 Z M499.6,58.6 H617.9 A16.7,16.7 0 0 1 634.5,75.3 V471.8 A16.7,16.7 0 0 1 617.9,488.5 H499.6 A16.7,16.7 0 0 1 482.9,471.8 V75.3 A16.7,16.7 0 0 1 499.6,58.6 Z"/>
+    </svg>
+    <p class="stamp"><b>Class I Contractor</b>Est. 1969</p>
+  </header>
+
+  <div class="hero">
+    <svg class="collage" viewBox="0 0 400 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <!-- Shape vocabulary taken from the mark itself: 45-degree right
+           triangles, solid blocks, and the bowl of the S. The solid purple
+           disc is load-bearing rather than decorative: his polo is white, so
+           on a white ground he needs a field to read against. -->
+      <path class="f-t2" d="M0,0 L128,0 L0,128 Z"/>
+      <circle class="f-t1" cx="352" cy="82" r="34"/>
+      <path class="f-t2" d="M400,146 L400,300 L246,300 Z"/>
+      <circle class="f-purple" cx="200" cy="196" r="146"/>
+      <path class="f-t1" d="M0,232 L76,232 A76,76 0 0 1 0,308 Z"/>
+      <path class="f-t2" d="M0,460 L0,374 L86,460 Z"/>
+      <path class="f-lift" d="M400,388 L400,460 L328,460 Z"/>
+      <rect class="f-purple" x="8" y="322" width="24" height="96"/>
+    </svg>
+    <img class="subject" src="assets/madhusudan-cut.webp" alt="M.S. Madhusudan" width="676" height="900">
+  </div>
+
+  <section class="id">
+    <h1 class="name">M.S. Madhusudan</h1>
+    <p><span class="pill">Proprietor</span></p>
+    <p class="tagline">From the sub-station to the last switch.</p>
+  </section>
+
+  <nav class="contact" aria-label="Contact">
+    <a class="crow" href="tel:+919845013813">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h3.5l1.8 4.4-2.2 1.3a11 11 0 0 0 5.7 5.7l1.3-2.2 4.4 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5z"/></svg>
+      <span class="num">+91 98450 13813</span>
+    </a>
+    <a class="crow" href="https://wa.me/919845013813" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 20.2l1.2-4a8 8 0 1 1 3 2.9z"/><path d="M9 9.2c0 3 2.4 5.4 5.4 5.4l.9-1.6-1.9-.8-.8.9a4.4 4.4 0 0 1-2-2l.9-.8-.8-1.9z"/></svg>
+      <span>Message on WhatsApp</span>
+    </a>
+    <a class="crow" href="mailto:suchetanaele@gmail.com">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="M3.5 7 12 13l8.5-6"/></svg>
+      <span>suchetanaele@gmail.com</span>
+    </a>
+    <a class="crow" href="https://www.google.com/maps/search/?api=1&amp;query=Shalimar%20Galaxy%2C%201st%20Main%20Road%2C%20Sheshadripuram%2C%20Bengaluru%20560020" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-6 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15 12 21 12 21z"/><path d="M12 10.5h.01"/></svg>
+      <span>Sheshadripuram, Bengaluru</span>
+    </a>
+
+    <a class="save" href="madhusudan.vcf" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5v15M5.5 13 12 19.5 18.5 13"/></svg>
+      Save to contacts
+    </a>
+  </nav>
+
+  <p class="foot">Suchetana Electricals · Since 1969</p>
+
+</main>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"M.S. Madhusudan",
+  "jobTitle":"Proprietor",
+  "telephone":"+91-98450-13813",
+  "email":"suchetanaele@gmail.com",
+  "url":"https://suchetanaelectricals.in",
+  "worksFor":{
+    "@type":"LocalBusiness",
+    "name":"Suchetana Electricals",
+    "description":"Class I electrical engineers and contractors, established 1969. HT & LT power, sub-stations, transformers and panels.",
+    "foundingDate":"1969",
+    "telephone":"+91-80-2346-4320",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"G 4/5, No. 139, Shalimar Galaxy, 1st Main Road, Near Total Gas Bunk, Sheshadripuram",
+      "addressLocality":"Bengaluru",
+      "addressRegion":"Karnataka",
+      "postalCode":"560020",
+      "addressCountry":"IN"
+    }
+  }
+}
+</script>
+</body>
+</html>
