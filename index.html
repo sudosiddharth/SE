@@ -167,6 +167,19 @@ body{
 /* ---------- print / PDF export ----------
    The PDF is rendered at the card's own size, so the card fills the page and
    nothing animates in mid-capture. */
+/* Print-only bridge back to the live card. Hidden on screen; declared before
+   the print block so the later rule cannot win in every medium. */
+.qr{display:none}
+.qr-in{
+  display:flex;align-items:center;gap:14px;
+  margin-top:12px;padding:12px 14px;
+  border:1px solid var(--hair);border-radius:10px;
+}
+.qr img{width:78px;height:78px;flex:none;display:block}
+.qr .qr-t{font-size:13px;font-weight:600;line-height:1.3;margin:0}
+.qr .qr-s{font-size:11.5px;line-height:1.35;margin:3px 0 0;color:var(--ink-soft)}
+.qr .qr-u{font-size:11.5px;margin:3px 0 0;color:var(--purple);word-break:break-all}
+
 @page{margin:0}
 @media print{
   body{padding:0;background:#fff;display:block;min-height:0}
@@ -180,6 +193,7 @@ body{
   /* "Save to contacts" points at a relative .vcf — meaningless once the PDF is
      sent on its own, so it is dropped from the export. */
   .save{display:none}
+  .qr{display:block}
 }
 </style>
 </head>
@@ -241,6 +255,17 @@ body{
       Save to contacts
     </a>
   </nav>
+
+  <section class="qr">
+    <div class="qr-in">
+      <img src="assets/qr-card.png" alt="QR code linking to the live card">
+      <div>
+        <p class="qr-t">Scan for the live card</p>
+        <p class="qr-s">Tap to call, WhatsApp, email or save the contact.</p>
+        <p class="qr-u">sudosiddharth.github.io/SE</p>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Suchetana Electricals · Since 1969</p>
 

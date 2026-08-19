@@ -168,6 +168,19 @@ body{
 /* ---------- print / PDF export ----------
    The PDF is rendered at the card's own size, so the card fills the page and
    nothing animates in mid-capture. */
+/* Print-only bridge back to the live card. Hidden on screen; declared before
+   the print block so the later rule cannot win in every medium. */
+.qr{display:none}
+.qr-in{
+  display:flex;align-items:center;gap:14px;
+  margin-top:12px;padding:12px 14px;
+  border:1px solid var(--hair);border-radius:10px;
+}
+.qr img{width:78px;height:78px;flex:none;display:block}
+.qr .qr-t{font-size:13px;font-weight:600;line-height:1.3;margin:0}
+.qr .qr-s{font-size:11.5px;line-height:1.35;margin:3px 0 0;color:var(--ink-soft)}
+.qr .qr-u{font-size:11.5px;margin:3px 0 0;color:var(--purple);word-break:break-all}
+
 @page{margin:0}
 @media print{
   body{padding:0;background:#fff;display:block;min-height:0}
@@ -181,6 +194,7 @@ body{
   /* "Save to contacts" points at a relative .vcf — meaningless once the PDF is
      sent on its own, so it is dropped from the export. */
   .save{display:none}
+  .qr{display:block}
 }
 </style>
 </head>
@@ -242,6 +256,17 @@ body{
       Save to contacts
     </a>
   </nav>
+
+  <section class="qr">
+    <div class="qr-in">
+      <img src="data:image/png;base64,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" alt="QR code linking to the live card">
+      <div>
+        <p class="qr-t">Scan for the live card</p>
+        <p class="qr-s">Tap to call, WhatsApp, email or save the contact.</p>
+        <p class="qr-u">sudosiddharth.github.io/SE</p>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Suchetana Electricals · Since 1969</p>
 
