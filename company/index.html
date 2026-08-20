@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Suchetana Electricals — Class I Electrical Contractors, Bengaluru</title>
 <meta name="description" content="Suchetana Electricals — Class I electrical engineers and contractors, Bengaluru. HT &amp; LT power, sub-stations, transformers and panels. Since 1969.">
-<meta name="theme-color" content="#0B0B0C">
+<meta name="theme-color" content="#FFD400">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 
@@ -23,20 +23,20 @@
 
 <style>
 :root{
-  --black:#0B0B0C;
-  --surface:#151517;
-  --yellow:#F5C518;      /* 12.1:1 on black */
-  --yellow-deep:#D9AC0B;
-  --white:#FFFFFF;
-  --dim:rgba(255,255,255,.66);   /* 8.7:1 on black */
-  --hair:rgba(245,197,24,.24);
-  --hair-soft:rgba(255,255,255,.13);
+  --yellow:#FFD400;        /* the ground */
+  --blue:#0F52BA;          /* 5.0:1 on yellow — the mid blue */
+  --blue-deep:#0A3C8A;     /* 7.2:1 on yellow */
+  --backdrop:#0A3C8A;      /* deep blue surround, so the card edge reads */
+  --hair:rgba(15,82,186,.30);
+  --hair-soft:rgba(15,82,186,.17);
+  /* No tinted-down secondary: blue faded toward yellow turns muddy grey and
+     never clears 4.5:1. Hierarchy comes from weight and size instead. */
 }
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:#000;color:var(--white);
+  margin:0;background:var(--backdrop);color:var(--blue);
   font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:14px;line-height:1.5;
   -webkit-font-smoothing:antialiased;
@@ -45,23 +45,23 @@ body{
 }
 
 /* Surfaces the browser would otherwise style for us. */
-::selection{background:var(--yellow);color:var(--black)}
-:root{caret-color:var(--yellow);scrollbar-color:var(--yellow) var(--black)}
-:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;border-radius:4px}
+::selection{background:var(--blue);color:var(--yellow)}
+:root{caret-color:var(--blue);scrollbar-color:var(--blue) var(--yellow)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
 
 /* One screen, no scroll. */
 .card{
   position:relative;overflow:hidden;
   width:min(100%,430px);
   height:min(100dvh,880px);
-  background:var(--black);
+  background:var(--yellow);
   display:flex;flex-direction:column;
   padding:calc(16px + env(safe-area-inset-top,0px)) 22px calc(16px + env(safe-area-inset-bottom,0px));
 }
 @media (min-width:481px){
   .card{
     height:min(calc(100dvh - 56px),880px);
-    border-radius:20px;box-shadow:0 24px 60px -28px rgba(0,0,0,.9);
+    border-radius:20px;box-shadow:0 24px 60px -28px rgba(0,0,0,.45);
   }
 }
 @media (max-width:480px){
@@ -75,8 +75,8 @@ body{
   padding-bottom:10px;border-bottom:1px solid var(--hair);
   font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
 }
-.top b{color:var(--yellow);font-weight:600}
-.top span{color:var(--dim);font-weight:500}
+.top b{color:var(--blue-deep);font-weight:700}
+.top span{color:var(--blue);font-weight:500}
 
 /* ---------- the mark, as the hero ---------- */
 .hero{
@@ -85,11 +85,11 @@ body{
   position:relative;
 }
 .mark{
-  width:min(90%,340px);height:auto;color:var(--yellow);display:block;
+  width:min(90%,340px);height:auto;color:var(--blue);display:block;
 }
 .est{
-  font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--yellow);margin:0;
+  font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--blue);margin:0;
 }
 
 /* ---------- wordmark ---------- */
@@ -100,7 +100,7 @@ body{
 }
 .wordmark p{
   margin:7px 0 0;font-size:14px;font-weight:600;
-  letter-spacing:.01em;color:var(--yellow);
+  letter-spacing:.01em;color:var(--blue);
 }
 
 /* Hazard rule — the mark's own diagonal, repeated. */
@@ -108,11 +108,11 @@ body{
 
 .pitch{
   flex:none;margin:0;text-align:center;
-  font-size:14px;font-weight:500;line-height:1.35;color:var(--white);
+  font-size:14px;font-weight:600;line-height:1.35;color:var(--blue-deep);
 }
 .scope{
   flex:none;margin:9px 0 0;text-align:center;
-  font-size:14px;font-weight:500;line-height:1.45;color:var(--dim);
+  font-size:14px;font-weight:500;line-height:1.45;color:var(--blue);
 }
 
 /* ---------- contact ---------- */
@@ -120,8 +120,8 @@ body{
 .crow{
   display:flex;align-items:center;gap:11px;
   padding:8px 2px;border-bottom:1px solid var(--hair-soft);
-  color:var(--white);text-decoration:none;
-  font-size:14px;font-weight:500;
+  color:var(--blue);text-decoration:none;
+  font-size:14px;font-weight:600;
   transition:color .18s ease;
 }
 /* Mono earns its place on dialled figures only — not as a mood. */
@@ -129,24 +129,24 @@ body{
   font-family:"IBM Plex Mono",ui-monospace,monospace;
   font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.01em;
 }
-.crow:hover{color:var(--yellow)}
-.crow svg{width:15px;height:15px;flex:none;stroke:var(--yellow);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.crow:hover{color:var(--blue-deep)}
+.crow svg{width:15px;height:15px;flex:none;stroke:var(--blue);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .crow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 .save{
   display:flex;align-items:center;justify-content:center;gap:9px;
   margin-top:11px;min-height:46px;border-radius:10px;
-  background:var(--yellow);color:var(--black);
+  background:var(--blue);color:var(--yellow);
   font-size:14px;font-weight:700;
   text-decoration:none;transition:background-color .18s ease;
 }
 .save svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.save:hover{background:var(--yellow-deep)}
+.save:hover{background:var(--blue-deep)}
 
 .foot{
   flex:none;margin-top:9px;text-align:center;
   font-family:"IBM Plex Mono",ui-monospace,monospace;
-  font-size:14px;letter-spacing:.02em;color:var(--dim);
+  font-size:14px;font-weight:600;letter-spacing:.02em;color:var(--blue);
 }
 
 /* ---------- motion ----------
@@ -168,12 +168,12 @@ body{
 .qr-in{display:flex;align-items:center;gap:14px;margin-top:11px;padding:12px 14px;border:1px solid var(--hair);border-radius:10px}
 .qr img{width:78px;height:78px;flex:none;display:block}
 .qr .qr-t{margin:0;font-size:14px;font-weight:700;line-height:1.3}
-.qr .qr-s{margin:3px 0 0;font-size:11px;line-height:1.35;color:var(--dim)}
-.qr .qr-u{margin:3px 0 0;font-size:11px;color:var(--yellow);word-break:break-all}
+.qr .qr-s{margin:3px 0 0;font-size:11px;line-height:1.35;color:var(--blue)}
+.qr .qr-u{margin:3px 0 0;font-size:11px;font-weight:600;color:var(--blue-deep);word-break:break-all}
 
 @page{margin:0}
 @media print{
-  body{padding:0;background:var(--black);display:block;min-height:0}
+  body{padding:0;background:var(--yellow);display:block;min-height:0}
   .card{width:100%;height:auto;max-height:none;border-radius:0;box-shadow:none}
   /* Height is measured from this layout, so the hero needs an explicit one:
      with the card auto-height the flex child collapses and the mark vanishes. */
@@ -210,7 +210,7 @@ body{
     <defs>
       <pattern id="hz" width="16" height="8" patternUnits="userSpaceOnUse"
                patternTransform="skewX(-30)">
-        <rect width="8" height="8" fill="#F5C518"/>
+        <rect width="8" height="8" fill="#0F52BA"/>
       </pattern>
     </defs>
     <rect width="400" height="8" fill="url(#hz)"/>
