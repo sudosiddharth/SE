@@ -76,11 +76,8 @@ body{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   position:relative;
 }
-/* The mark sits on a bordered plate, mirroring the physical signboard. */
-.plate{
-  display:inline-flex;flex-direction:column;align-items:center;gap:14px;
-  padding:22px 26px 16px;border:2px solid var(--blue);border-radius:14px;
-}
+/* Groups the mark with its badge; no frame — the border read as a box. */
+.plate{display:inline-flex;flex-direction:column;align-items:center;gap:15px}
 .mark{
   width:min(52%,196px);height:auto;color:var(--blue);display:block;
 }
@@ -111,6 +108,16 @@ body{
 .scope{
   flex:none;margin:9px 0 0;text-align:center;
   font-size:14px;font-weight:500;line-height:1.45;color:var(--blue);
+}
+
+/* ---------- who you are calling ---------- */
+.person{flex:none;text-align:center;margin-top:14px}
+.person .pname{
+  margin:0;font-size:18px;font-weight:800;letter-spacing:-.015em;color:var(--blue-deep);
+}
+.person .prole{
+  margin:4px 0 0;font-size:11px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--blue);
 }
 
 /* ---------- contact ---------- */
@@ -152,11 +159,11 @@ body{
 @keyframes strike{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
 @keyframes settle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .hero{animation:strike .9s cubic-bezier(.16,1,.3,1) both}
-.wordmark,.hazard,.pitch,.scope,.contact,.foot{
+.wordmark,.hazard,.pitch,.scope,.person,.contact,.foot{
   animation:settle .55s cubic-bezier(.16,1,.3,1) .3s both;
 }
 @media (prefers-reduced-motion:reduce){
-  .hero,.wordmark,.hazard,.pitch,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
+  .hero,.wordmark,.hazard,.pitch,.scope,.person,.contact,.foot{animation:none;opacity:1;transform:none}
 }
 
 /* Hidden on screen; revealed only in the PDF export. Declared before the print
@@ -175,7 +182,7 @@ body{
   /* Height is measured from this layout, so the hero needs an explicit one:
      with the card auto-height the flex child collapses and the mark vanishes. */
   .hero{flex:none}
-  .hero,.wordmark,.hazard,.pitch,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
+  .hero,.wordmark,.hazard,.pitch,.scope,.person,.contact,.foot{animation:none;opacity:1;transform:none}
   /* Relative .vcf is meaningless once the PDF travels on its own. */
   .save{display:none}
   .qr{display:block}
@@ -213,6 +220,11 @@ body{
   <p class="pitch">From the sub-station to the last switch.</p>
   <p class="scope">Sub-stations · HT &amp; LT power</p>
 
+  <div class="person">
+    <p class="pname">Madhusudan M S</p>
+    <p class="prole">Proprietor</p>
+  </div>
+
   <nav class="contact" aria-label="Contact">
     <a class="crow" href="tel:+919845013813">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h3.5l1.8 4.4-2.2 1.3a11 11 0 0 0 5.7 5.7l1.3-2.2 4.4 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5z"/></svg>
@@ -231,7 +243,7 @@ body{
       <span>Sheshadripuram, Bengaluru 560 020</span>
     </a>
 
-    <a class="save" href="data:text/vcard;charset=utf-8;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpOOjs7OzsNCkZOOlN1Y2hldGFuYSBFbGVjdHJpY2Fscw0KT1JHOlN1Y2hldGFuYSBFbGVjdHJpY2Fscw0KVElUTEU6RWxlY3RyaWNhbCBFbmdpbmVlcnMgJiBDb250cmFjdG9ycw0KVEVMO1RZUEU9Q0VMTCxWT0lDRTorOTE5ODQ1MDEzODEzDQpURUw7VFlQRT1DRUxMLFZPSUNFOis5MTgzMTAyNjcxMzcNCkVNQUlMO1RZUEU9SU5URVJORVQsV09SSzpzdWNoZXRhbmFlbGVAZ21haWwuY29tDQpBRFI7VFlQRT1XT1JLOjs7RyA0LzVcLCBOby4gMTM5XCwgU2hhbGltYXIgR2FsYXh5XCwgMXN0IE1haW4gUm9hZFwsIE5lYXIgVG90YWwgR2FzIEJ1bmtcLCBTaGVzaGFkcmlwdXJhbTtCZW5nYWx1cnU7S2FybmF0YWthOzU2MDAyMDtJbmRpYQ0KVVJMOmh0dHBzOi8vc3VjaGV0YW5hZWxlY3RyaWNhbHMuaW4NCk5PVEU6RWxlY3RyaWNhbCBlbmdpbmVlcnMgYW5kIGNvbnRyYWN0b3JzIHNpbmNlIDE5NjkuIEhUICYgTFQgcG93ZXIgc3VwcGx5XCwgdHJhbnNmb3JtZXJzIHRvIDEwMDAgS1ZBXCwgNjYvMTEgJiAxMTAvMzMgS1Ygc3ViLXN0YXRpb25zXCwgSFQgcGFuZWxzIGFuZCBSTVVcLCBvdmVyaGVhZCBsaW5lc1wsIEhUIGNhYmxlIHdvcmtzLiBHU1QgMjlBQ0dQTTQ4MDlIMVpFDQpFTkQ6VkNBUkQNCg==" download="suchetana.vcf">
+    <a class="save" href="data:text/vcard;charset=utf-8;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpOOjs7OzsNCkZOOlN1Y2hldGFuYSBFbGVjdHJpY2Fscw0KT1JHOlN1Y2hldGFuYSBFbGVjdHJpY2Fscw0KVElUTEU6RWxlY3RyaWNhbCBFbmdpbmVlcnMgJiBMaWNlbnNlZCBFbGVjdHJpY2FsIENvbnRyYWN0b3JzDQpURUw7VFlQRT1DRUxMLFZPSUNFOis5MTk4NDUwMTM4MTMNClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzkxODMxMDI2NzEzNw0KRU1BSUw7VFlQRT1JTlRFUk5FVCxXT1JLOnN1Y2hldGFuYWVsZUBnbWFpbC5jb20NCkFEUjtUWVBFPVdPUks6OztHIDQvNVwsIE5vLiAxMzlcLCBTaGFsaW1hciBHYWxheHlcLCAxc3QgTWFpbiBSb2FkXCwgTmVhciBUb3RhbCBHYXMgQnVua1wsIFNoZXNoYWRyaXB1cmFtO0JlbmdhbHVydTtLYXJuYXRha2E7NTYwMDIwO0luZGlhDQpVUkw6aHR0cHM6Ly9zdWNoZXRhbmFlbGVjdHJpY2Fscy5pbg0KTk9URTpQcm9wcmlldG9yOiBNYWRodXN1ZGFuIE0gUy4gRWxlY3RyaWNhbCBlbmdpbmVlcnMgYW5kIGxpY2Vuc2VkIGVsZWN0cmljYWwgY29udHJhY3RvcnMgc2luY2UgMTk2OS4gU3ViLXN0YXRpb25zXCwgSFQgJiBMVCBwb3dlci4gR1NUIDI5QUNHUE00ODA5SDFaRQ0KRU5EOlZDQVJEDQo=" download="suchetana.vcf">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5v15M5.5 13 12 19.5 18.5 13"/></svg>
       Save company contact
     </a>
@@ -263,6 +275,7 @@ body{
   "email":"suchetanaele@gmail.com",
   "url":"https://suchetanaelectricals.in",
   "areaServed":"Bengaluru",
+  "founder":{"@type":"Person","name":"Madhusudan M S","jobTitle":"Proprietor"},
   "address":{
     "@type":"PostalAddress",
     "streetAddress":"G 4/5, No. 139, Shalimar Galaxy, 1st Main Road, Near Total Gas Bunk, Sheshadripuram",

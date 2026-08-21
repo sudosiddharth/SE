@@ -77,11 +77,8 @@ body{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   position:relative;
 }
-/* The mark sits on a bordered plate, mirroring the physical signboard. */
-.plate{
-  display:inline-flex;flex-direction:column;align-items:center;gap:14px;
-  padding:22px 26px 16px;border:2px solid var(--blue);border-radius:14px;
-}
+/* Groups the mark with its badge; no frame — the border read as a box. */
+.plate{display:inline-flex;flex-direction:column;align-items:center;gap:15px}
 .mark{
   width:min(52%,196px);height:auto;color:var(--blue);display:block;
 }
@@ -112,6 +109,16 @@ body{
 .scope{
   flex:none;margin:9px 0 0;text-align:center;
   font-size:14px;font-weight:500;line-height:1.45;color:var(--blue);
+}
+
+/* ---------- who you are calling ---------- */
+.person{flex:none;text-align:center;margin-top:14px}
+.person .pname{
+  margin:0;font-size:18px;font-weight:800;letter-spacing:-.015em;color:var(--blue-deep);
+}
+.person .prole{
+  margin:4px 0 0;font-size:11px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--blue);
 }
 
 /* ---------- contact ---------- */
@@ -153,11 +160,11 @@ body{
 @keyframes strike{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
 @keyframes settle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .hero{animation:strike .9s cubic-bezier(.16,1,.3,1) both}
-.wordmark,.hazard,.pitch,.scope,.contact,.foot{
+.wordmark,.hazard,.pitch,.scope,.person,.contact,.foot{
   animation:settle .55s cubic-bezier(.16,1,.3,1) .3s both;
 }
 @media (prefers-reduced-motion:reduce){
-  .hero,.wordmark,.hazard,.pitch,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
+  .hero,.wordmark,.hazard,.pitch,.scope,.person,.contact,.foot{animation:none;opacity:1;transform:none}
 }
 
 /* Hidden on screen; revealed only in the PDF export. Declared before the print
@@ -176,7 +183,7 @@ body{
   /* Height is measured from this layout, so the hero needs an explicit one:
      with the card auto-height the flex child collapses and the mark vanishes. */
   .hero{flex:none}
-  .hero,.wordmark,.hazard,.pitch,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
+  .hero,.wordmark,.hazard,.pitch,.scope,.person,.contact,.foot{animation:none;opacity:1;transform:none}
   /* Relative .vcf is meaningless once the PDF travels on its own. */
   .save{display:none}
   .qr{display:block}
@@ -213,6 +220,11 @@ body{
 
   <p class="pitch">From the sub-station to the last switch.</p>
   <p class="scope">Sub-stations · HT &amp; LT power</p>
+
+  <div class="person">
+    <p class="pname">Madhusudan M S</p>
+    <p class="prole">Proprietor</p>
+  </div>
 
   <nav class="contact" aria-label="Contact">
     <a class="crow" href="tel:+919845013813">
@@ -264,6 +276,7 @@ body{
   "email":"suchetanaele@gmail.com",
   "url":"https://suchetanaelectricals.in",
   "areaServed":"Bengaluru",
+  "founder":{"@type":"Person","name":"Madhusudan M S","jobTitle":"Proprietor"},
   "address":{
     "@type":"PostalAddress",
     "streetAddress":"G 4/5, No. 139, Shalimar Galaxy, 1st Main Road, Near Total Gas Bunk, Sheshadripuram",
