@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -29,6 +29,7 @@
   --backdrop:#08214A;      /* calm surround so the card edge still reads */
   --hair:rgba(12,63,145,.16);
   --hair-soft:rgba(12,63,145,.11);
+  --plate:#F6C92F;         /* the logo box fill, yellow in both palettes */
   /* No tinted-down secondary: blue faded toward yellow turns muddy grey and
      never clears 4.5:1. Hierarchy comes from weight and size instead. */
 }
@@ -78,7 +79,11 @@ body{
   position:relative;
 }
 /* Groups the mark with its badge; no frame — the border read as a box. */
-.plate{display:inline-flex;flex-direction:column;align-items:center;gap:15px}
+.plate{
+  display:inline-flex;flex-direction:column;align-items:center;gap:13px;
+  padding:20px 26px 15px;
+  background:var(--plate);border:2px solid var(--blue);border-radius:12px;
+}
 .mark{
   width:min(52%,196px);height:auto;color:var(--blue);display:block;
 }
@@ -91,8 +96,9 @@ body{
 /* ---------- wordmark ---------- */
 .wordmark{flex:none;text-align:center;margin-top:18px}
 .wordmark h1{
-  margin:0;font-weight:800;font-size:clamp(20px,5.6vw,25px);
-  line-height:1.08;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance;
+  margin:0;font-weight:800;font-stretch:78%;
+  font-size:clamp(27px,7.7vw,34px);
+  line-height:1.04;letter-spacing:-.004em;text-wrap:balance;
 }
 .wordmark p{
   margin:9px 0 0;font-size:11px;font-weight:500;
@@ -225,6 +231,11 @@ body{
       <span>Sheshadripuram, Bengaluru 560 020</span>
     </a>
 
+    <a class="crow" href="https://sudosiddharth.github.io/SE/company/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8a15 15 0 0 1 0 18.4 15 15 0 0 1 0-18.4"/></svg>
+      <span>Website</span>
+    </a>
+
     <a class="save" href="suchetana-electricals.vcf" download>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5v15M5.5 13 12 19.5 18.5 13"/></svg>
       Save company contact
@@ -255,7 +266,7 @@ body{
   "foundingDate":"1969",
   "telephone":"+91-98450-13813",
   "email":"suchetanaele@gmail.com",
-  "url":"https://suchetanaelectricals.in",
+  "url":"https://sudosiddharth.github.io/SE/company/",
   "areaServed":"Bengaluru",
   "founder":{"@type":"Person","name":"Madhusudan M S","jobTitle":"Proprietor"},
   "address":{
