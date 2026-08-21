@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>M.S. Madhusudan — Suchetana Electricals</title>
 <meta name="description" content="M.S. Madhusudan, Proprietor, Suchetana Electricals — Class I electrical engineers and contractors, Bengaluru. Since 1969.">
-<meta name="theme-color" content="#E7D8F2">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 
@@ -23,14 +23,16 @@
 
 <style>
 :root{
-  --paper:#E7D8F2;         /* lilac ground — 11% saturation, it stays calm */
-  --backdrop:#2A0A45;      /* deep surround so the card edge reads */
-  --purple:#4A1173;        /* one ink: 9.6:1 on the ground */
-  --purple-deep:#320B4F;   /* pressed state only */
-  --tint-1:#F2EAF8;        /* lighter than the ground */
-  --tint-2:#D0B4E4;        /* darker than the ground */
-  --ink:#4A1173;           /* text is the same purple; no second hue */
-  --hair:rgba(74,17,115,.16);
+  --paper:#FFFFFF;
+  --backdrop:#EFEAF3;
+  --purple:#580C90;        /* brand, from the SE artwork — 9.5:1 on white */
+  --purple-deep:#3F0669;
+  --purple-lift:#7A28B8;
+  --tint-1:#F1EAF6;
+  --tint-2:#DFCCEC;
+  --ink:#1A1420;                  /* 16.6:1 on white */
+  --ink-soft:rgba(26,20,32,.62);  /* 7.3:1 on white */
+  --hair:rgba(26,20,32,.13);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -45,8 +47,8 @@ body{
 }
 
 /* Surfaces the browser would otherwise style for us. */
-::selection{background:var(--purple);color:var(--paper)}
-:root{caret-color:var(--purple);scrollbar-color:var(--purple) var(--backdrop)}
+::selection{background:var(--purple);color:#fff}
+:root{caret-color:var(--purple);scrollbar-color:var(--purple-lift) var(--backdrop)}
 :focus-visible{outline:2px solid var(--purple);outline-offset:3px;border-radius:4px}
 
 /* One screen, no scroll. */
@@ -62,7 +64,7 @@ body{
   /* Subtract the body padding, or a short desktop window clips the card. */
   .card{
     height:min(calc(100dvh - 56px),880px);
-    border-radius:20px;box-shadow:0 24px 60px -28px rgba(0,0,0,.45);
+    border-radius:20px;box-shadow:0 24px 60px -28px rgba(26,20,32,.34);
   }
 }
 /* On a phone the card IS the screen — any body padding would force a scroll. */
@@ -77,7 +79,7 @@ body{
 .top .stamp{
   margin:0;text-align:right;
   font-size:11px;font-weight:500;line-height:1.5;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink);
+  text-transform:uppercase;color:var(--ink-soft);
 }
 .top .stamp b{display:block;font-weight:600;color:var(--purple)}
 
@@ -86,34 +88,35 @@ body{
 .collage{position:absolute;inset:0;width:100%;height:100%}
 /* Shape fills come from the tokens, so the world recolours in one place. */
 .collage .f-purple{fill:var(--purple)}
+.collage .f-lift{fill:var(--purple-lift)}
 .collage .f-t1{fill:var(--tint-1)}
 .collage .f-t2{fill:var(--tint-2)}
 .subject{
   position:absolute;left:50%;bottom:0;transform:translateX(-50%);
   height:100%;width:auto;max-width:none;object-fit:contain;object-position:bottom;
-  filter:drop-shadow(0 14px 22px rgba(42,10,69,.28));
+  filter:drop-shadow(0 14px 22px rgba(26,20,32,.22));
 }
 
 /* ---------- identity ---------- */
 .id{flex:none;z-index:3;text-align:center;margin-top:2px}
 .name{
-  margin:0;font-weight:700;font-size:clamp(26px,7.9vw,34px);
+  margin:0;font-weight:800;font-size:clamp(26px,7.9vw,34px);
   line-height:1.04;letter-spacing:-.028em;text-wrap:balance;
 }
 .pill{
   display:inline-block;margin:9px 0 0;padding:5px 16px;border-radius:999px;
-  background:var(--purple);color:var(--paper);
+  background:var(--purple);color:#fff;
   font-size:11px;font-weight:600;letter-spacing:.055em;text-transform:uppercase;
 }
 .tagline{
-  margin:10px 0 0;font-size:14px;font-weight:500;line-height:1.4;color:var(--ink);
+  margin:10px 0 0;font-size:14px;font-weight:500;line-height:1.35;color:var(--ink-soft);
 }
 
 /* ---------- contact ---------- */
-.contact{flex:none;z-index:3;margin-top:20px;border-top:1px solid var(--hair)}
+.contact{flex:none;z-index:3;margin-top:13px;border-top:1px solid var(--hair)}
 .crow{
   display:flex;align-items:center;gap:11px;
-  padding:11px 2px;border-bottom:1px solid var(--hair);
+  padding:9px 2px;border-bottom:1px solid var(--hair);
   color:var(--ink);text-decoration:none;
   font-size:14px;font-weight:500;letter-spacing:.005em;
   transition:color .18s ease;
@@ -130,7 +133,7 @@ body{
 .save{
   display:flex;align-items:center;justify-content:center;gap:9px;
   margin-top:12px;min-height:46px;border-radius:10px;
-  background:var(--purple);color:var(--paper);
+  background:var(--purple);color:#fff;
   font-size:14px;font-weight:600;
   text-decoration:none;transition:background-color .18s ease;
 }
@@ -139,16 +142,16 @@ body{
 
 .foot{
   flex:none;margin-top:10px;text-align:center;
-  font-size:14px;font-weight:500;letter-spacing:.01em;color:var(--ink);
+  font-size:14px;font-weight:500;letter-spacing:.01em;color:var(--ink-soft);
 }
 
 /* ---------- motion ----------
    One authored moment: the collage blooms and he rises into it. Everything
    below settles on a single shared beat rather than each section repeating the
    same entrance. The masthead is never hidden — it starts visible. */
-@keyframes bloom{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
-@keyframes stand{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%)}}
-@keyframes settle{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes bloom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+@keyframes stand{from{opacity:0;transform:translateX(-50%) translateY(16px)}to{opacity:1;transform:translateX(-50%)}}
+@keyframes settle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 .collage{animation:bloom .9s cubic-bezier(.16,1,.3,1) both;transform-origin:50% 62%}
 /* `stand` must carry translateX(-50%) through: a keyframe ending at
@@ -174,7 +177,7 @@ body{
 }
 .qr img{width:78px;height:78px;flex:none;display:block}
 .qr .qr-t{font-size:14px;font-weight:600;line-height:1.3;margin:0}
-.qr .qr-s{font-size:14px;line-height:1.35;margin:3px 0 0;color:var(--ink)}
+.qr .qr-s{font-size:14px;line-height:1.35;margin:3px 0 0;color:var(--ink-soft)}
 .qr .qr-u{font-size:14px;margin:3px 0 0;color:var(--purple);word-break:break-all}
 
 @page{margin:0}
@@ -212,9 +215,13 @@ body{
            disc is load-bearing rather than decorative: his polo is white, so
            on a white ground he needs a field to read against. -->
       <path class="f-t2" d="M0,0 L128,0 L0,128 Z"/>
-      <path class="f-t1" d="M400,146 L400,300 L246,300 Z"/>
+      <circle class="f-t1" cx="352" cy="82" r="34"/>
+      <path class="f-t2" d="M400,146 L400,300 L246,300 Z"/>
       <circle class="f-purple" cx="200" cy="196" r="146"/>
+      <path class="f-t1" d="M0,232 L76,232 A76,76 0 0 1 0,308 Z"/>
       <path class="f-t2" d="M0,460 L0,374 L86,460 Z"/>
+      <path class="f-lift" d="M400,388 L400,460 L328,460 Z"/>
+      <rect class="f-purple" x="8" y="322" width="24" height="96"/>
     </svg>
     <img class="subject" src="assets/madhusudan-cut.webp" alt="M.S. Madhusudan" width="676" height="900">
   </div>
