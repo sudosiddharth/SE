@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="assets/icon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Suchetana Electricals — Electrical Engineers &amp; Contractors">
+<meta property="og:title" content="Suchetana Electricals — Electrical Engineers &amp; Licensed Contractors">
 <meta property="og:description" content="HT &amp; LT power · Sub-stations · Transformers · Bengaluru · Since 1969">
 <meta property="og:image" content="https://sudosiddharth.github.io/SE/company/assets/og.jpg">
 <meta property="og:url" content="https://sudosiddharth.github.io/SE/company/">
@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -74,26 +74,32 @@ body{
 /* ---------- the mark, as the hero ---------- */
 .hero{
   flex:none;padding:4px 0 2px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
   position:relative;
 }
+/* The mark sits on a bordered plate, mirroring the physical signboard. */
+.plate{
+  display:inline-flex;flex-direction:column;align-items:center;gap:14px;
+  padding:22px 26px 16px;border:2px solid var(--blue);border-radius:14px;
+}
 .mark{
-  width:min(62%,232px);height:auto;color:var(--blue);display:block;
+  width:min(52%,196px);height:auto;color:var(--blue);display:block;
 }
 .est{
-  font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--blue);margin:0;
+  margin:0;padding:5px 16px 4px;border-radius:999px;
+  background:var(--blue);color:var(--yellow);
+  font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
 }
 
 /* ---------- wordmark ---------- */
 .wordmark{flex:none;text-align:center;margin-top:4px}
 .wordmark h1{
-  margin:0;font-weight:800;font-size:clamp(23px,6.6vw,29px);
-  line-height:1.06;letter-spacing:-.02em;text-wrap:balance;
+  margin:0;font-weight:900;font-size:clamp(25px,7.2vw,32px);
+  line-height:1.02;letter-spacing:-.028em;text-wrap:balance;
 }
 .wordmark p{
-  margin:7px 0 0;font-size:14px;font-weight:600;
-  letter-spacing:.01em;color:var(--blue);
+  margin:8px 0 0;font-size:11px;font-weight:600;
+  letter-spacing:.02em;line-height:1.4;color:var(--blue);
 }
 
 /* Hazard rule — the mark's own diagonal, repeated. */
@@ -119,8 +125,7 @@ body{
 }
 /* Mono earns its place on dialled figures only — not as a mood. */
 .crow .num{
-  font-family:"IBM Plex Mono",ui-monospace,monospace;
-  font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.01em;
+  font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.02em;
 }
 .crow:hover{color:var(--blue-deep)}
 .crow svg{width:15px;height:15px;flex:none;stroke:var(--blue);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -137,8 +142,8 @@ body{
 .save:hover{background:var(--blue-deep)}
 
 .foot{
-  flex:none;margin-top:9px;text-align:center;
-  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  flex:none;margin-top:10px;text-align:left;
+  font-variant-numeric:tabular-nums;
   font-size:14px;font-weight:600;letter-spacing:.02em;color:var(--blue);
 }
 
@@ -182,16 +187,18 @@ body{
 <main class="card">
 
   <div class="hero">
+    <span class="plate">
     <svg class="mark" viewBox="0 0 974 536" fill="currentColor" fill-rule="evenodd"
          role="img" aria-label="Suchetana Electricals">
       <path d="M444,2 L441,535 L685,535 L683,2 Z M69,24 L45,40 L24,61 L15,74 L5,96 L0,122 L0,146 L4,166 L15,193 L25,209 L44,232 L251,464 L257,480 L257,489 L254,499 L244,515 L221,533 L258,535 L293,532 L330,522 L351,512 L375,496 L396,475 L408,457 L419,431 L423,410 L422,376 L416,353 L407,332 L378,292 L174,68 L166,49 L167,35 L175,19 L189,5 L146,4 L118,7 L91,14 Z M703,1 L973,231 L972,0 Z M973,318 L889,390 L709,535 L973,535 Z M214,3 L352,161 L416,231 L415,3 Z M1,314 L1,535 L202,533 Z M863,159 L698,288 L732,314 L863,405 Z"/>
     </svg>
-    <p class="est">Since 1969</p>
+    <span class="est">Since 1969</span>
+    </span>
   </div>
 
   <div class="wordmark">
     <h1>Suchetana Electricals</h1>
-    <p>Electrical Engineers &amp; Contractors</p>
+    <p>Electrical Engineers &amp; Licensed Electrical Contractors</p>
   </div>
 
   <svg class="hazard" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 400 8">
@@ -205,7 +212,7 @@ body{
   </svg>
 
   <p class="pitch">From the sub-station to the last switch.</p>
-  <p class="scope">HT &amp; LT power · Sub-stations · Transformers</p>
+  <p class="scope">Sub-stations · HT &amp; LT power</p>
 
   <nav class="contact" aria-label="Contact">
     <a class="crow" href="tel:+919845013813">
