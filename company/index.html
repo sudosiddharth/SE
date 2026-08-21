@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Suchetana Electricals — Electrical Engineers &amp; Contractors, Bengaluru</title>
 <meta name="description" content="Suchetana Electricals — electrical engineers and contractors, Bengaluru. HT &amp; LT power, sub-stations, transformers and panels. Since 1969.">
-<meta name="theme-color" content="#FFD400">
+<meta name="theme-color" content="#F6C92F">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 
@@ -23,12 +23,12 @@
 
 <style>
 :root{
-  --yellow:#FFD400;        /* the ground */
-  --blue:#0F52BA;          /* 5.0:1 on yellow — the mid blue */
-  --blue-deep:#0A3C8A;     /* 7.2:1 on yellow */
-  --backdrop:#0A3C8A;      /* deep blue surround, so the card edge reads */
-  --hair:rgba(15,82,186,.30);
-  --hair-soft:rgba(15,82,186,.17);
+  --yellow:#F6C92F;        /* ground — 81% saturation, not 100%; it stops vibrating */
+  --blue:#0C3F91;          /* 6.2:1 on yellow — one blue, deeper and calmer */
+  --blue-deep:#08295E;     /* pressed state only */
+  --backdrop:#08214A;      /* calm surround so the card edge still reads */
+  --hair:rgba(12,63,145,.16);
+  --hair-soft:rgba(12,63,145,.11);
   /* No tinted-down secondary: blue faded toward yellow turns muddy grey and
      never clears 4.5:1. Hierarchy comes from weight and size instead. */
 }
@@ -85,39 +85,33 @@ body{
 .est{
   margin:0;padding:5px 16px 4px;border-radius:999px;
   background:var(--blue);color:var(--yellow);
-  font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
 }
 
 /* ---------- wordmark ---------- */
-.wordmark{flex:none;text-align:center;margin-top:4px}
+.wordmark{flex:none;text-align:center;margin-top:18px}
 .wordmark h1{
-  margin:0;font-weight:900;font-size:clamp(21px,5.9vw,26px);
-  line-height:1.06;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance;
+  margin:0;font-weight:800;font-size:clamp(20px,5.6vw,25px);
+  line-height:1.08;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance;
 }
 .wordmark p{
-  margin:8px 0 0;font-size:11px;font-weight:600;
-  letter-spacing:.02em;line-height:1.4;color:var(--blue);
+  margin:9px 0 0;font-size:11px;font-weight:500;
+  letter-spacing:.03em;line-height:1.45;color:var(--blue);
 }
 
-/* Hazard rule — the mark's own diagonal, repeated. */
-.hazard{display:block;width:100%;height:8px;margin:14px 0 12px;flex:none}
 
-.pitch{
-  flex:none;margin:0;text-align:center;
-  font-size:14px;font-weight:600;line-height:1.35;color:var(--blue-deep);
-}
 .scope{
-  flex:none;margin:9px 0 0;text-align:center;
+  flex:none;margin:20px 0 0;text-align:center;
   font-size:14px;font-weight:500;line-height:1.45;color:var(--blue);
 }
 
 /* ---------- contact ---------- */
-.contact{flex:none;margin-top:13px;border-top:1px solid var(--hair-soft)}
+.contact{flex:none;margin-top:26px;border-top:1px solid var(--hair-soft)}
 .crow{
   display:flex;align-items:center;gap:11px;
-  padding:8px 2px;border-bottom:1px solid var(--hair-soft);
+  padding:11px 2px;border-bottom:1px solid var(--hair-soft);
   color:var(--blue);text-decoration:none;
-  font-size:14px;font-weight:600;
+  font-size:14px;font-weight:500;
   transition:color .18s ease;
 }
 /* Mono earns its place on dialled figures only — not as a mood. */
@@ -127,9 +121,9 @@ body{
 .crow:hover{color:var(--blue-deep)}
 /* Same row rhythm, but it is a statement rather than an action. */
 .crow--id{cursor:default}
-.crow--id .who{font-weight:800;color:var(--blue-deep)}
+.crow--id .who{font-weight:700}
 .crow--id .role{
-  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
   color:var(--blue);margin-left:auto;padding-left:10px;flex:none;
 }
 .crow svg{width:15px;height:15px;flex:none;stroke:var(--blue);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -139,7 +133,7 @@ body{
   display:flex;align-items:center;justify-content:center;gap:9px;
   margin-top:11px;min-height:46px;border-radius:10px;
   background:var(--blue);color:var(--yellow);
-  font-size:14px;font-weight:700;
+  font-size:14px;font-weight:600;
   text-decoration:none;transition:background-color .18s ease;
 }
 .save svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -148,20 +142,20 @@ body{
 .foot{
   flex:none;margin-top:10px;text-align:left;
   font-variant-numeric:tabular-nums;
-  font-size:14px;font-weight:600;letter-spacing:.02em;color:var(--blue);
+  font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--blue);
 }
 
 /* ---------- motion ----------
    One authored moment: the mark strikes in, everything else settles behind it
    on a single shared beat. */
-@keyframes strike{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
-@keyframes settle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes strike{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 .hero{animation:strike .9s cubic-bezier(.16,1,.3,1) both}
-.wordmark,.hazard,.pitch,.scope,.contact,.foot{
+.wordmark,.scope,.contact,.foot{
   animation:settle .55s cubic-bezier(.16,1,.3,1) .3s both;
 }
 @media (prefers-reduced-motion:reduce){
-  .hero,.wordmark,.hazard,.pitch,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
+  .hero,.wordmark,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
 }
 
 /* Hidden on screen; revealed only in the PDF export. Declared before the print
@@ -180,7 +174,7 @@ body{
   /* Height is measured from this layout, so the hero needs an explicit one:
      with the card auto-height the flex child collapses and the mark vanishes. */
   .hero{flex:none}
-  .hero,.wordmark,.hazard,.pitch,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
+  .hero,.wordmark,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
   /* Relative .vcf is meaningless once the PDF travels on its own. */
   .save{display:none}
   .qr{display:block}
@@ -205,17 +199,7 @@ body{
     <p>Electrical Engineers &amp; Licensed Electrical Contractors</p>
   </div>
 
-  <svg class="hazard" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 400 8">
-    <defs>
-      <pattern id="hz" width="16" height="8" patternUnits="userSpaceOnUse"
-               patternTransform="skewX(-30)">
-        <rect width="8" height="8" fill="#0F52BA"/>
-      </pattern>
-    </defs>
-    <rect width="400" height="8" fill="url(#hz)"/>
-  </svg>
 
-  <p class="pitch">From the sub-station to the last switch.</p>
   <p class="scope">Sub-stations · HT &amp; LT power</p>
 
   <nav class="contact" aria-label="Contact">
