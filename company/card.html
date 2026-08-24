@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -95,9 +95,11 @@ body{
 /* ---------- wordmark ---------- */
 .wordmark{flex:none;text-align:center;margin-top:18px}
 .wordmark h1{
-  margin:0;font-weight:800;font-stretch:78%;
-  font-size:clamp(27px,7.7vw,34px);
-  line-height:1.04;letter-spacing:-.004em;text-wrap:balance;
+  /* Anton: heavy, condensed, tightly fitted — matched against the
+     printed card's wordmark. Single weight, so display use only. */
+  margin:0;font-family:"Anton","Archivo",sans-serif;font-weight:400;
+  font-size:clamp(31px,8.7vw,38px);
+  line-height:1.02;letter-spacing:-.002em;text-wrap:balance;
 }
 .wordmark p{
   margin:9px 0 0;font-size:11px;font-weight:500;
