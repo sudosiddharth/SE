@@ -198,7 +198,9 @@ body{
   .hero{flex:none}
   .hero,.wordmark,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
   /* Relative .vcf is meaningless once the PDF travels on its own. */
-  .save{display:none}
+  .save,.crow:not(.crow--id){display:none}
+  .contact{border-top:0;margin-top:22px}
+  .crow--id{border-top:1px solid var(--hair-soft)}
   .pdf-connect{display:block}
 }
 </style>
@@ -259,7 +261,7 @@ body{
 
     <section class="pdf-connect">
       <a class="pdf-connect-in" href="https://sudosiddharth.github.io/SE/connect/" target="_blank" rel="noopener">
-        <span><strong>Tap to connect</strong><small>Call · WhatsApp · Email · Website</small></span>
+        <span><strong>Tap to connect</strong></span>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </section>
