@@ -193,16 +193,22 @@ body{
 @page{margin:0}
 @media print{
   body{padding:0;background:var(--yellow);display:block;min-height:0}
-  .card{width:100%;height:auto;max-height:none;border-radius:0;box-shadow:none}
+  .card{width:100%;height:auto;max-height:none;border-radius:0;box-shadow:none;padding:30px 30px 28px}
   /* Height is measured from this layout, so the hero needs an explicit one:
      with the card auto-height the flex child collapses and the mark vanishes. */
   .hero{flex:none}
   .hero,.wordmark,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
   /* Relative .vcf is meaningless once the PDF travels on its own. */
   .save,.crow:not(.crow--id){display:none}
-  .contact{border-top:0;margin-top:22px}
-  .crow--id{border-top:1px solid var(--hair-soft)}
-  .pdf-connect{display:block}
+  .hero{padding:0}
+  .wordmark{margin-top:27px}
+  .wordmark p{margin-top:12px}
+  .scope{margin-top:29px}
+  .contact{border-top:0;margin-top:34px}
+  .crow--id{padding:15px 2px;border-top:1px solid var(--hair-soft)}
+  .pdf-connect{display:block;margin-top:18px}
+  .pdf-connect-in{margin-top:0;padding:19px 20px}
+  .foot{margin-top:21px}
 }
 </style>
 </head>
