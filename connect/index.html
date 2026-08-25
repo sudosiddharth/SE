@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Connect with Suchetana Electricals</title>
+<meta name="description" content="Call, WhatsApp, email or visit Suchetana Electricals online.">
+<meta name="theme-color" content="#580C90">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Connect with Suchetana Electricals">
+<meta property="og:description" content="Call · WhatsApp · Email · Website">
+<meta property="og:image" content="https://sudosiddharth.github.io/SE/connect/assets/og.jpg">
+<meta property="og:url" content="https://sudosiddharth.github.io/SE/connect/">
+<link rel="canonical" href="https://sudosiddharth.github.io/SE/connect/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#580C90;
+  --purple-deep:#3F0669;
+  --yellow:#F6C92F;
+  --paper:#FFFFFF;
+  --ink:#21052F;
+  --muted:#684D74;
+  --line:rgba(88,12,144,.14);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--purple-deep)}
+body{
+  margin:0;min-height:100dvh;padding:max(18px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom));
+  display:grid;place-items:center;background:var(--purple-deep);color:var(--ink);
+  font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--yellow);color:var(--purple-deep)}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
+.shell{
+  width:min(430px,calc(100vw - 36px));min-height:min(760px,calc(100dvh - 36px));
+  padding:24px 22px 20px;border-radius:22px;background:var(--paper);
+  box-shadow:0 28px 80px -38px rgba(0,0,0,.72);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.identity{text-align:center}
+.mark-tile{
+  width:136px;aspect-ratio:1;margin:0 auto 17px;border:2px solid var(--purple);border-radius:15px;
+  background:var(--yellow);display:grid;place-items:center;
+}
+.mark{width:82%;height:auto;color:var(--purple);display:block}
+h1{
+  margin:0;font-family:"Anton","Archivo",sans-serif;font-size:clamp(34px,10vw,43px);
+  font-weight:400;line-height:.98;letter-spacing:-.01em;text-wrap:balance;color:var(--purple);
+}
+.sub{margin:10px auto 0;max-width:29ch;color:var(--muted);font-size:14px;font-weight:530;line-height:1.45}
+.actions{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:27px;
+}
+.action{
+  min-width:0;min-height:112px;padding:15px 13px;border:1px solid var(--line);border-radius:14px;
+  color:var(--purple);background:var(--paper);text-decoration:none;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;
+  transition:transform .18s cubic-bezier(.16,1,.3,1),background-color .18s ease,color .18s ease,border-color .18s ease;
+}
+.action svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.action strong{font-size:16px;font-weight:750;line-height:1}
+.action small{display:block;margin-top:5px;color:var(--muted);font-size:11px;font-weight:560;line-height:1.25;overflow-wrap:anywhere}
+.action--primary{background:var(--purple);border-color:var(--purple);color:var(--paper)}
+.action--primary small{color:rgba(255,255,255,.74)}
+.action--whatsapp{background:var(--yellow);border-color:var(--yellow);color:var(--purple-deep)}
+.action--whatsapp small{color:rgba(63,6,105,.72)}
+@media (hover:hover){
+  .action:hover{transform:translateY(-3px);border-color:var(--purple);background:#F8F2FC}
+  .action--primary:hover{background:var(--purple-deep);color:var(--paper)}
+  .action--whatsapp:hover{background:#FFD84D;color:var(--purple-deep)}
+}
+.action:active{transform:translateY(0) scale(.985)}
+.note{
+  margin:20px 0 0;padding-top:17px;border-top:1px solid var(--line);text-align:center;
+  color:var(--muted);font-size:12px;font-weight:540;line-height:1.45;
+}
+.note b{color:var(--purple);font-weight:750}
+@keyframes lockup{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes actions-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.identity{animation:lockup .7s cubic-bezier(.16,1,.3,1) both}
+.actions,.note{animation:actions-in .55s cubic-bezier(.16,1,.3,1) .18s both}
+@media (prefers-reduced-motion:reduce){.identity,.actions,.note{animation:none}.action{transition:none}}
+@media (max-height:690px){
+  body{padding:0}.shell{min-height:100dvh;border-radius:0;padding-top:16px;padding-bottom:14px}
+  .mark-tile{width:108px;margin-bottom:12px}.actions{margin-top:18px}.action{min-height:92px}.note{margin-top:14px;padding-top:12px}
+}
+@media (max-width:350px){
+  .shell{padding-left:16px;padding-right:16px}.actions{gap:8px}.action{min-height:104px;padding:13px 11px}
+}
+</style>
+</head>
+<body>
+<!--
+THESIS: A scan should become a decision, not another profile to read; four direct actions replace the generic digital-card scroll.
+OWN-WORLD: Brand violet, electrical yellow, square SE emblem, crisp line icons, and compact white paper.
+STORY: Recognize Suchetana Electricals, choose a channel, connect immediately.
+FIRST VIEWPORT: Centered square mark and wordmark above a 2×2 action field; Call and WhatsApp carry the strongest color.
+FORM: Mobile contact switchboard, inherited from the established company identity.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<main class="shell">
+  <header class="identity">
+    <div class="mark-tile">
+      <svg class="mark" viewBox="0 0 974 536" fill="currentColor" fill-rule="evenodd" role="img" aria-label="Suchetana Electricals mark">
+        <path d="M444,2 L441,535 L685,535 L683,2 Z M69,24 L45,40 L24,61 L15,74 L5,96 L0,122 L0,146 L4,166 L15,193 L25,209 L44,232 L251,464 L257,480 L257,489 L254,499 L244,515 L221,533 L258,535 L293,532 L330,522 L351,512 L375,496 L396,475 L408,457 L419,431 L423,410 L422,376 L416,353 L407,332 L378,292 L174,68 L166,49 L167,35 L175,19 L189,5 L146,4 L118,7 L91,14 Z M703,1 L973,231 L972,0 Z M973,318 L889,390 L709,535 L973,535 Z M214,3 L352,161 L416,231 L415,3 Z M1,314 L1,535 L202,533 Z M863,159 L698,288 L732,314 L863,405 Z"/>
+      </svg>
+    </div>
+    <h1>Suchetana Electricals</h1>
+    <p class="sub">Choose how you would like to connect.</p>
+  </header>
+
+  <nav class="actions" aria-label="Contact Suchetana Electricals">
+    <a class="action action--primary" href="tel:+919845013813" aria-label="Call Suchetana Electricals at +91 98450 13813">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h3.5l1.8 4.4-2.2 1.3a11 11 0 0 0 5.7 5.7l1.3-2.2 4.4 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5z"/></svg>
+      <span><strong>Call</strong><small>+91 98450 13813</small></span>
+    </a>
+    <a class="action action--whatsapp" href="https://wa.me/919845013813" target="_blank" rel="noopener" aria-label="Message Suchetana Electricals on WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 20.2l1.2-4a8 8 0 1 1 3 2.9z"/><path d="M9 9.2c0 3 2.4 5.4 5.4 5.4l.9-1.6-1.9-.8-.8.9a4.4 4.4 0 0 1-2-2l.9-.8-.8-1.9z"/></svg>
+      <span><strong>WhatsApp</strong><small>Start a conversation</small></span>
+    </a>
+    <a class="action" href="mailto:suchetanaele@gmail.com" aria-label="Email Suchetana Electricals">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="M3.5 7 12 13l8.5-6"/></svg>
+      <span><strong>Email</strong><small>suchetanaele@gmail.com</small></span>
+    </a>
+    <a class="action" href="https://sudosiddharth.github.io/SE/company/" aria-label="Open the Suchetana Electricals company profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8a15 15 0 0 1 0 18.4 15 15 0 0 1 0-18.4"/></svg>
+      <span><strong>Website</strong><small>Company profile</small></span>
+    </a>
+  </nav>
+
+  <p class="note"><b>Electrical Engineers &amp; Licensed Contractors</b><br>Sheshadripuram, Bengaluru · Since 1969</p>
+</main>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Electrician",
+  "name":"Suchetana Electricals",
+  "telephone":"+91 98450 13813",
+  "email":"suchetanaele@gmail.com",
+  "url":"https://sudosiddharth.github.io/SE/connect/",
+  "address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560020","addressCountry":"IN"}
+}
+</script>
+</body>
+</html>
