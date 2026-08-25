@@ -78,6 +78,15 @@ h1{
   .action--whatsapp:hover{background:#FFD84D;color:var(--purple-deep)}
 }
 .action:active{transform:translateY(0) scale(.985)}
+button.action{width:100%;font:inherit;text-align:left;cursor:pointer}
+.mail-picker{position:fixed;z-index:20;inset:0;padding:18px;display:grid;place-items:center;background:rgba(33,5,47,.66);opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease}
+.mail-picker[data-open="true"]{opacity:1;visibility:visible}
+.mail-sheet{width:min(390px,100%);padding:22px;border-radius:18px;background:var(--paper);box-shadow:0 28px 80px -28px rgba(0,0,0,.8);transform:translateY(12px) scale(.98);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.mail-picker[data-open="true"] .mail-sheet{transform:none}
+.mail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.mail-head h2{margin:0;color:var(--purple);font-size:22px;line-height:1.1;letter-spacing:-.02em}.mail-head p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.mail-close{width:42px;height:42px;flex:none;padding:0;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--purple);display:grid;place-items:center;cursor:pointer}.mail-close svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.mail-options{display:grid;gap:9px;margin-top:20px}.mail-option{min-height:56px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;color:var(--purple);background:#FBF8FD;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14px;font-weight:750;transition:transform .18s cubic-bezier(.16,1,.3,1),border-color .18s ease,background-color .18s ease}.mail-option small{color:var(--muted);font-size:11px;font-weight:560}.mail-option svg{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}@media(hover:hover){.mail-option:hover{transform:translateX(3px);border-color:var(--purple);background:#F5ECFA}}
 .note{
   margin:20px 0 0;padding-top:17px;border-top:1px solid var(--line);text-align:center;
   color:var(--muted);font-size:12px;font-weight:540;line-height:1.45;
@@ -87,7 +96,7 @@ h1{
 @keyframes actions-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .identity{animation:lockup .7s cubic-bezier(.16,1,.3,1) both}
 .actions,.note{animation:actions-in .55s cubic-bezier(.16,1,.3,1) .18s both}
-@media (prefers-reduced-motion:reduce){.identity,.actions,.note{animation:none}.action{transition:none}}
+@media (prefers-reduced-motion:reduce){.identity,.actions,.note{animation:none}.action,.mail-picker,.mail-sheet,.mail-option{transition:none}}
 @media (orientation:landscape) and (max-height:600px){
   body{padding:12px}
   .shell{
@@ -142,18 +151,46 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 20.2l1.2-4a8 8 0 1 1 3 2.9z"/><path d="M9 9.2c0 3 2.4 5.4 5.4 5.4l.9-1.6-1.9-.8-.8.9a4.4 4.4 0 0 1-2-2l.9-.8-.8-1.9z"/></svg>
       <span><strong>WhatsApp</strong><small>Start a conversation</small></span>
     </a>
-    <a class="action" href="mailto:suchetanaele@gmail.com" aria-label="Email Suchetana Electricals">
+    <button class="action" type="button" data-mail-open aria-haspopup="dialog" aria-controls="mail-picker" aria-label="Choose an email provider for Suchetana Electricals">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h17v13h-17z"/><path d="M3.5 7 12 13l8.5-6"/></svg>
-      <span><strong>Email</strong><small>suchetanaele@gmail.com</small></span>
-    </a>
-    <a class="action" href="https://sudosiddharth.github.io/SE/company/" aria-label="Open the Suchetana Electricals company profile">
+      <span><strong>Email</strong><small>Choose email app</small></span>
+    </button>
+    <a class="action" href="https://suchetana-electricals-v2.vercel.app" target="_blank" rel="noopener" aria-label="Open the Suchetana Electricals website">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8a15 15 0 0 1 0 18.4 15 15 0 0 1 0-18.4"/></svg>
-      <span><strong>Website</strong><small>Company profile</small></span>
+      <span><strong>Website</strong><small>Visit our website</small></span>
     </a>
   </nav>
 
   <p class="note"><b>Electrical Engineers &amp; Licensed Contractors</b><br>Sheshadripuram, Bengaluru · Since 1969</p>
 </main>
+<div class="mail-picker" id="mail-picker" data-open="false" role="dialog" aria-modal="true" aria-labelledby="mail-title" aria-hidden="true">
+  <section class="mail-sheet">
+    <header class="mail-head">
+      <div><h2 id="mail-title">Choose email app</h2><p>Write to suchetanaele@gmail.com</p></div>
+      <button class="mail-close" type="button" data-mail-close aria-label="Close email options"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </header>
+    <div class="mail-options">
+      <a class="mail-option" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=suchetanaele%40gmail.com" target="_blank" rel="noopener"><span>Gmail<br><small>Open Gmail compose</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="mail-option" href="https://mail.zoho.com/zm/#compose?to=suchetanaele%40gmail.com" target="_blank" rel="noopener"><span>Zoho Mail<br><small>Open Zoho compose</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="mail-option" href="https://outlook.office.com/mail/deeplink/compose?to=suchetanaele%40gmail.com" target="_blank" rel="noopener"><span>Outlook<br><small>Open Outlook compose</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</div>
+<script>
+(() => {
+  const picker = document.getElementById('mail-picker');
+  const opener = document.querySelector('[data-mail-open]');
+  const closer = picker.querySelector('[data-mail-close]');
+  let previousFocus;
+  const open = () => { previousFocus = document.activeElement; picker.dataset.open = 'true'; picker.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; requestAnimationFrame(() => closer.focus()); };
+  const close = () => { picker.dataset.open = 'false'; picker.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; (previousFocus || opener).focus(); };
+  opener.addEventListener('click', open);
+  closer.addEventListener('click', close);
+  picker.addEventListener('click', event => { if (event.target === picker) close(); });
+  picker.querySelectorAll('.mail-option').forEach(link => link.addEventListener('click', () => setTimeout(close, 80)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && picker.dataset.open === 'true') close(); });
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -161,7 +198,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   "name":"Suchetana Electricals",
   "telephone":"+91 98450 13813",
   "email":"suchetanaele@gmail.com",
-  "url":"https://sudosiddharth.github.io/SE/connect/",
+  "url":"https://suchetana-electricals-v2.vercel.app",
   "address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560020","addressCountry":"IN"}
 }
 </script>
