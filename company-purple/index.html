@@ -70,6 +70,16 @@ body{
   body{padding:0;overflow:hidden}
   .card{height:100dvh;max-height:100dvh;width:100%}
 }
+/* On very short browser windows, centering a fixed-height composition clips
+   both ends—including the top edge of the square logo tile. Keep the top
+   complete and let the page scroll instead of presenting an open box. */
+@media (max-height:700px){
+  body{align-items:flex-start;overflow-y:auto}
+  .card{height:auto;min-height:100dvh;max-height:none;justify-content:flex-start;overflow:visible;padding-top:18px;padding-bottom:18px}
+  .wordmark{margin-top:14px}
+  .scope{margin-top:15px}
+  .contact{margin-top:20px}
+}
 
 
 /* ---------- the mark, as the hero ---------- */
@@ -93,6 +103,7 @@ body{
   background:var(--blue);color:var(--yellow);
   font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
 }
+@media (max-height:700px){.plate{width:176px}}
 
 /* ---------- wordmark ---------- */
 .wordmark{flex:none;text-align:center;margin-top:18px}
