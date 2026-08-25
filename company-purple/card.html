@@ -177,14 +177,17 @@ body{
   .hero,.wordmark,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
 }
 
-/* Hidden on screen; revealed only in the PDF export. Declared before the print
-   block — at equal specificity the later rule would win in every medium. */
-.qr{display:none}
-.qr-in{display:flex;align-items:center;gap:16px;margin-top:11px;padding:14px;border:1px solid var(--hair);border-radius:10px}
-.qr img{width:108px;height:108px;flex:none;display:block}
-.qr .qr-t{margin:0;font-size:14px;font-weight:700;line-height:1.3}
-.qr .qr-s{margin:3px 0 0;font-size:11px;line-height:1.35;color:var(--blue)}
-.qr .qr-u{margin:3px 0 0;font-size:11px;font-weight:600;color:var(--blue-deep);word-break:break-all}
+/* Hidden on screen; revealed only in the PDF export. The whole block is one
+   HTTPS annotation—the most broadly supported kind of PDF link. */
+.pdf-connect{display:none}
+.pdf-connect-in{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  margin-top:11px;padding:17px 18px;border-radius:10px;
+  background:var(--blue);color:var(--yellow);text-decoration:none;
+}
+.pdf-connect strong{display:block;font-size:16px;font-weight:700;line-height:1.2}
+.pdf-connect small{display:block;margin-top:4px;font-size:11px;font-weight:500;line-height:1.35}
+.pdf-connect svg{width:25px;height:25px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 @page{margin:0}
 @media print{
@@ -196,7 +199,7 @@ body{
   .hero,.wordmark,.scope,.contact,.foot{animation:none;opacity:1;transform:none}
   /* Relative .vcf is meaningless once the PDF travels on its own. */
   .save{display:none}
-  .qr{display:block}
+  .pdf-connect{display:block}
 }
 </style>
 </head>
@@ -254,14 +257,11 @@ body{
       Save company contact
     </a>
 
-    <section class="qr">
-      <div class="qr-in">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnYAAAJ2CAIAAABdNliuAAALmElEQVR42u3dwZEbRxBE0YRirzRQVsgWWSEDaUDLAkpz2GZNVb13ZgA7gwF+NC/5OecEAPhuf7gFACCxACCxACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQCAxAKAxAKAxAIAEgsAEgsAEgsASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCABILABILABILAEgsAEgsAEgsACCxACCxACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQCAxAKAxAKAxAIA/+2ryx/654+/fVr/65+ffw27n8+vqPZZqr3zN+7Sjfu5+dOc992c98vgFAsA8R/FACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAQSzuxwJCuK0O1CyHzdmm6LK5s3nvZvEPlzjvFAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQCAxAJALO3EqkMarmR02bp5/nc+/5c3VnGev+a8HZUbn2bts7T5W7x5EcgpFgAkFgAkFgCQWACQWACQWABAYgFAYgFAYgEAiQUAiQUAiQUAJBYAYmmHvG37ossuzbz72WXzpMuzBE6xACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAQSzvEJs8NN3ZU5q331N7PLjs/4BQLABILAEgsAEgsAEgsACCxACCxACCxAIDEAoDEAoDEAgASCwASCwCxtBMbMr08X1zZvI5y4y49/5dd3r32fta+Zpdn3h6RUywASCwAILEAILEAILEAgMQCgMQCgMQCABILABILABILAEgsAEgsAMTSTvquo2BH5c2v6TPKyk0ev3VOsQCAxAKAxAKAxAIAEgsAEgsAEgsASCwASCwASCwAILEAILEAILEAQBov7dTuk8R+zsoNmXlqN2R8Rq7dKRYAkFgAkFgAkFgAQGIBQGIBQGIBAIkFAIkFAIkFACQWACQWACQWAMjwpZ2UbrOkyebJvI2OLssw857kLs/SvG9xl/WeeVfkFAsA8R/FACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAQSztZs/eSCzsVN979xkLIvCuqXfPosuKyeQmq9tpt3TjFAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQCAxAKAxALAIp9zTrZuX6TJes+NNY8ur7l5daTL/axdXNn8fZ/3JM/b+XGKBQCJBQCJBQCJBQAkFgAkFgAkFgCQWACQWACQWABAYgFAYgFAYgGArFva6bI+sXltxv2ctIbU5QnZ/Bsy7zNyigUAJBYAJBYAJBYAkFgAkFgAkFgAQGIBQGIBQGIBAIkFAIkFAIkFAH7pa94ldVm02Lz7Ubsh8/w1rSFVXfvmzah53+LN6z1OsQAgsQAgsQAgsQCAxAKAxAKAxAIAEgsAEgsAEgsASCwASCwASCwAEEs7eecqTu0yTO0Vddkj6nLtXa5o3rNU+3fW/obYz3GKBQCJBQCJBQAkFgAkFgAkFgCQWACQWACQWABAYgFAYgFAYgEAiQWAl/qcc7J1FSelSxE3/s55utz5eU/I5ivavGBjvccpFgAkFgAkFgCQWACQWACQWABAYgFAYgFAYgEAiQUAiQUAiQUAJBYAYmknfTd5umxK3LiizdtB83Z+ujzz8xZX5i1BdflNdooFgPiPYgBAYgFAYgFAYgEAiQUAiQUAiQUAJBYAJBYAJBYAkFgAkFgAmOEr1icyZ5tl8zJMxi0XbTZv58fCklMsACCxACCxACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILACQFUs7WbzRMW+9Z95yUZfVkS4rQ/P2c3yLnWIBAIkFAIkFAIkFACQWACQWACQWAJBYAJBYAJBYAEBiAUBiAUBiAYCsWNqp3Ty58e5dtllumHfttc/n5r2XzQs2m7/vXe68UywASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCABILABILABILAGTd0s7mbZZ5iytd7mftna/d5Jn3Le7yG1L7LD1/zdp3d4oFgPiPYgBAYgFAYgFAYgEAiQUAiQUAiQUAJBYAJBYAJBYAkFgAkFgAiKUd8lv2Xm7sfnR59zTZUZm3+zHv+ezyuW/eTZr3PXKKBQCJBQCJBQAkFgAkFgAkFgCQWACQWACQWABAYgFAYgFAYgEAiQWAWNqJvZe3raN0Wd7osuJSa94ekTWk93/jNq/3OMUCgMQCgMQCgMQCABILABILABILAEgsAEgsAEgsACCxACCxACCxAEAs7WTPSkbt+sSNbZYbVzRvo6PLZlSXPSIrQ++/n06xAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQDAL33OOcMuad4uTe3f2eUuZdzC0o3XnLfi0mU3afNd2vxpOsUCgMQCgMQCgMQCABILABILABILAEgsAEgsAEgsACCxACCxACCxAMC3+XIL8vrFlXnrPV0+o3lbIrWLQLE28/pP01PnFAsAEgsAEgsASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCABILALG0k7ftVNxYdZi3inPj3WuvaPM2S+1n1OXdu3yPurz7vM/dKRYAJBYAJBYAkFgAkFgAkFgAQGIBQGIBQGIBAIkFAIkFAIkFACQWAAp8zjnZumgxbxUn4zZPaq9980LI5s9o3oJNl7vUZQXLKRYAJBYAJBYAkFgAkFgAkFgAQGIBQGIBQGIBAIkFAIkFAIkFACQWAAp8uQV5/VKE7QvbLL5xsdZlXcopFgCQWACQWACQWABAYgFAYgFAYgEAiQUAiQUAiQUAiQUAJBYAJBYAYmkn1jxebN6KS5dFoNo7X7vi0mWX5sZrdvl2zPulnbfe4xQLABILABILABILAEgsAEgsAEgsACCxACCxACCxAIDEAoDEAoDEAgDf5nPOcRcWskuzc/dj8xJU7YJNl2v3zDvFAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQCAxALAS31l3JrHZs9XMubtadxYBNr87fAsVd35LotVtXepy1PnFAsAEgsAEgsAEgsASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCAFm3tJNxCwxZvDJUuyWyeevm+d9Zu7hy43Pv8izV/p3zfj+dYgFAYgEAiQUAiQUAiQUAJBYAJBYAJBYAkFgAkFgAkFgAQGIBQGIBIJZ2YsEmbRct5l37vBWXLntEN56lzetSrsgpFgCQWACQWACQWABAYgFAYgFAYgEAiQUAiQUAiQUAJBYAJBYAJBYAiKUdMnWj4/nazI0Fmy6rOJuXoLrc+doFm3lPslMsAEgsACCxACCxACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILADE0g4r3FibcUV5/TZL7dbNjc+odkNm3r6TxSqnWACQWACQWABAYgFAYgFAYgEAiQUAiQUAiQUAJBYAJBYAJBYAkFgAiKWdvG1xxbXn9WseabIQ0uV+dnn32k2eNNlN8vvpFAsAEgsASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCABILABILALG08zpddirm3c8bmye1Wzebr73LGlLGLcPMe0KcYgEAiQUAiQUAiQUAJBYAJBYAJBYAkFgAkFgAkFgAQGIBQGIBQGIBgG/wOee4CwDgFAsAEgsAEgsASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCABILABILABILAEgsAEgsAEgsACCxACCxACCxAIDEAoDEAoDEAgASCwASCwASCwBILABILABILAAgsQAgsQAgsQCAxAKAxAKAxAIAEgsAEgsAEgsASCwASCwASCwAILEAILEAILEAgMQCgMQCgMQCABILABILABILAEgsAEgsAEgsACCxAPC7/QtVuL16wCpPMgAAAABJRU5ErkJggg==" alt="QR code linking to the live card">
-        <div>
-          <p class="qr-t">Scan to connect</p>
-          <p class="qr-s">Call · WhatsApp · Email · Website</p>
-        </div>
-      </div>
+    <section class="pdf-connect">
+      <a class="pdf-connect-in" href="https://sudosiddharth.github.io/SE/connect/" target="_blank" rel="noopener">
+        <span><strong>Tap to connect</strong><small>Call · WhatsApp · Email · Website</small></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </section>
   </nav>
 
