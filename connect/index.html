@@ -88,7 +88,23 @@ h1{
 .identity{animation:lockup .7s cubic-bezier(.16,1,.3,1) both}
 .actions,.note{animation:actions-in .55s cubic-bezier(.16,1,.3,1) .18s both}
 @media (prefers-reduced-motion:reduce){.identity,.actions,.note{animation:none}.action{transition:none}}
-@media (max-height:690px){
+@media (orientation:landscape) and (max-height:600px){
+  body{padding:12px}
+  .shell{
+    width:min(820px,calc(100vw - 24px));min-height:calc(100dvh - 24px);
+    padding:18px 22px;border-radius:18px;
+    display:grid;grid-template-columns:minmax(230px,.8fr) minmax(360px,1.2fr);
+    grid-template-rows:1fr auto;column-gap:28px;row-gap:10px;align-items:center;
+  }
+  .identity{grid-column:1;grid-row:1;text-align:left;align-self:end}
+  .mark-tile{width:96px;margin:0 0 13px}
+  h1{font-size:34px;max-width:8ch}
+  .sub{margin:8px 0 0;max-width:24ch}
+  .actions{grid-column:2;grid-row:1 / span 2;margin:0;align-self:center}
+  .action{min-height:96px}
+  .note{grid-column:1;grid-row:2;margin:0;padding-top:12px;text-align:left;align-self:start}
+}
+@media (max-height:690px) and (orientation:portrait){
   body{padding:0}.shell{min-height:100dvh;border-radius:0;padding-top:16px;padding-bottom:14px}
   .mark-tile{width:108px;margin-bottom:12px}.actions{margin-top:18px}.action{min-height:92px}.note{margin-top:14px;padding-top:12px}
 }
